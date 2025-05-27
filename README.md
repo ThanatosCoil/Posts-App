@@ -1,4 +1,4 @@
-# [YC Directory]  (https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)[![Открыть проект](https://img.shields.io/badge/View%20Live-Online-brightgreen?style=for-the-badge&logo=vercel)](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app/)
+# [YC Directory](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)[![Открыть проект](https://img.shields.io/badge/View%20Live-Online-brightgreen?style=for-the-badge&logo=vercel)](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app/)
 
 ## Обзор
 
