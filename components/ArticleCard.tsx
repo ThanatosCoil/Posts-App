@@ -3,12 +3,12 @@ import { EyeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { Author, Startup } from "@/sanity/types";
+import { Author, Article } from "@/sanity/types";
 import { Skeleton } from "./ui/skeleton";
 
-export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
+export type ArticleTypeCard = Omit<Article, "author"> & { author?: Author };
 
-const StartupCard = ({ post }: { post: StartupTypeCard }) => {
+const ArticleCard = ({ post }: { post: ArticleTypeCard }) => {
   const {
     _createdAt,
     views,
@@ -21,9 +21,9 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   } = post;
 
   return (
-    <li className="startup-card group">
+    <li className="article-card group">
       <div className="flex-between">
-        <p className="startup_card_date">{formatDate(_createdAt)}</p>
+        <p className="article_card_date">{formatDate(_createdAt)}</p>
         <div className="flex gap-1 5">
           <EyeIcon className="size-6 text-primary" />
           <span className="text-16-medium">{views}</span>
@@ -35,7 +35,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           <Link href={`/user/${author?._id}`}>
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link>
-          <Link href={`/startup/${_id}`}>
+          <Link href={`/article/${_id}`}>
             <h3 className="text-26-semibold line-clamp-1">{title}</h3>
           </Link>
         </div>
@@ -50,10 +50,10 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         </Link>
       </div>
 
-      <Link href={`/startup/${_id}`}>
-        <p className="startup-card_desc">{description}</p>
+      <Link href={`/article/${_id}`}>
+        <p className="article-card_desc">{description}</p>
 
-        <img src={image} alt="placeholder" className="startup-card_img" />
+        <img src={image} alt="placeholder" className="article-card_img" />
       </Link>
 
       <div className="flex-between gap-3 mt-5">
@@ -61,22 +61,22 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           <p className="text-16-medium">{category}</p>
         </Link>
 
-        <Button className="startup-card_btn" asChild>
-          <Link href={`/startup/${_id}`}>Details</Link>
+        <Button className="article-card_btn" asChild>
+          <Link href={`/article/${_id}`}>Details</Link>
         </Button>
       </div>
     </li>
   );
 };
 
-export const StartupCardSkeleton = () => (
+export const ArticleCardSkeleton = () => (
   <>
     {[0, 1, 2, 3, 4].map((index: number) => (
       <li key={cn("skeleton", index)}>
-        <Skeleton className="startup-card_skeleton" />
+        <Skeleton className="article-card_skeleton" />
       </li>
     ))}
   </>
 );
 
-export default StartupCard;
+export default ArticleCard;

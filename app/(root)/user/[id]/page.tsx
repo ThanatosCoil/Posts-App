@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
-import { StartupCardSkeleton } from "@/components/StartupCard";
-import UserStartups from "@/components/UserStartups";
+import { ArticleCardSkeleton } from "@/components/ArticleCard";
+import UserArticles from "@/components/UserArticles";
 import { client } from "@/sanity/lib/client";
 import { AUTHOR_BY_ID_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
@@ -46,11 +46,11 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
         <div className="flex-1 flex flex-col gap-5 lg:-mt-5">
           <p className="text-30-bold">
-            {session?.id == id ? "Your" : "All"} Startups
+            {session?.id == id ? "Your" : "All"} Articles
           </p>
           <ul className="card_grid-sm">
-            <Suspense fallback={<StartupCardSkeleton />}>
-              <UserStartups id={id} />
+            <Suspense fallback={<ArticleCardSkeleton />}>
+              <UserArticles id={id} />
             </Suspense>
           </ul>
         </div>

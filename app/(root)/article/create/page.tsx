@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import StartupForm from "@/components/StartupForm";
+import ArticleForm from "@/components/ArticleForm";
 import { redirect } from "next/navigation";
 
 const Page = async () => {
@@ -12,9 +12,9 @@ const Page = async () => {
   return (
     <>
       <section className="pink_container !min-h-[230px]">
-        <h1 className="heading">Submit your startup</h1>
+        <h1 className="heading">Submit your article</h1>
       </section>
-      <StartupForm />
+      <ArticleForm />
     </>
   );
 };

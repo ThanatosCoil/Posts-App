@@ -1,7 +1,7 @@
-import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import ArticleCard, { ArticleTypeCard } from "@/components/ArticleCard";
 import SearchForm from "../../components/SearchForm";
 /* import { client } from "@/sanity/lib/client"; */
-import { STARTUPS_QUERY } from "@/sanity/lib/queries";
+import { ARTICLES_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { auth } from "@/auth";
 
@@ -11,12 +11,12 @@ export default async function Home({
   searchParams: Promise<{ query?: string }>;
 }) {
   const query = (await searchParams).query;
-  const params = { search: query || null };
+  const params = { search: query ? `*${query}*` : null };
 
   const session = await auth();
 
-  /*   const posts = await client.fetch(STARTUPS_QUERY); */
-  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
+  /*   const posts = await client.fetch(ARTICLES_QUERY); */
+  const { data: posts } = await sanityFetch({ query: ARTICLES_QUERY, params });
 
   /*   const posts = [
     {
@@ -36,11 +36,11 @@ export default async function Home({
     <>
       <section className="pink_container">
         <h1 className="heading">
-          Make Your Startup, <br /> Connect With Entrepreneurs
+          Make Your Article, <br /> Express Your Ideas
         </h1>
 
         <p className="sub-heading !max-w-3xl">
-          Submit Ideas, Vote on Startups, and Get Noticed in Virtual
+          Submit Ideas, Vote on Articles, and Get Noticed in Virtual
           competitions
         </p>
 
@@ -49,16 +49,16 @@ export default async function Home({
 
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for ${query}` : "All Startups"}
+          {query ? `Search results for ${query}` : "All Articles"}
         </p>
 
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
-            posts.map((post: StartupTypeCard) => (
-              <StartupCard key={post?._id} post={post} />
+            posts.map((post: ArticleTypeCard) => (
+              <ArticleCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="no-results">No startups found</p>
+            <p className="no-results">No articles found</p>
           )}
         </ul>
       </section>

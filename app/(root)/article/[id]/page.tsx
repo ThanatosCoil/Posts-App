@@ -1,6 +1,6 @@
 import { formatDate } from "@/lib/utils";
 import { client } from "@/sanity/lib/client";
-import { PLAYLIST_BY_SLUG_QUERY, STARTUP_BY_ID } from "@/sanity/lib/queries";
+import { PLAYLIST_BY_SLUG_QUERY, ARTICLE_BY_ID } from "@/sanity/lib/queries";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,7 +8,7 @@ import markdownit from "markdown-it";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
-import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import ArticleCard, { ArticleTypeCard } from "@/components/ArticleCard";
 
 const md = markdownit();
 
@@ -19,7 +19,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   /* Параллельный фетчинг */
   const [post, { select: editorPosts }] = await Promise.all([
-    client.fetch(STARTUP_BY_ID, { id }),
+    client.fetch(ARTICLE_BY_ID, { id }),
     client.fetch(PLAYLIST_BY_SLUG_QUERY, {
       slug: "editor-picks",
     }),
@@ -27,14 +27,14 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   /*   Это последовательный фетчинг, сначала пост потом едитор постс, но они не взаимосвязанны, нам не нужно одно чтобы получить другое, поэтому выше делаем параллельный фетчинг */
 
-  /* const post = await client.fetch(STARTUP_BY_ID, { id });
+  /* const post = await client.fetch(ARTICLE_BY_ID, { id });
 
   const { select: editorPosts } = await client.fetch(PLAYLIST_BY_SLUG_QUERY, {
     slug: "editor-picks",
   }); */
 
   if (!post) {
-    return notFound;
+    notFound();
   }
 
   const parsedContent = md.render(post?.pitch || "");
@@ -92,8 +92,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             <p className="text-30-semibold">Editor picks</p>
 
             <ul className="mt-7 card_grid-sm">
-              {editorPosts.map((post: StartupTypeCard, index: number) => (
-                <StartupCard key={index} post={post} />
+              {editorPosts.map((post: ArticleTypeCard, index: number) => (
+                <ArticleCard key={index} post={post} />
               ))}
             </ul>
           </div>

@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [YC Directory](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)
 
-## Getting Started
+## Обзор
 
-First, run the development server:
+**YC Directory** — веб-приложение для управления и публикации статей, авторов и плейлистов, построенное на базе Next.js и Sanity CMS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Технологический стек
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 15 (App Router, TypeScript)**
+- **React 19**
+- **Sanity v3** (Headless CMS, Studio на `/studio`)
+- **NextAuth.js** (Аутентификация)
+- **Tailwind CSS** (кастомные шрифты, анимации)
+- **Radix UI** (UI-примитивы)
+- **Lucide React** (Иконки)
+- **Markdown/MD Editor** (редактирование статей)
+- **Styled-components** (CSS-in-JS)
+- **Vercel** (Деплой)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Функциональность
 
-To learn more about Next.js, take a look at the following resources:
+- **Управление статьями**: создание и просмотр статей.
+- **Управление авторами**: управление авторами.
+- **Плейлисты**: создание плейлистов из статей.
+- **Sanity Studio**: полноценная CMS по адресу [`/studio`](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app/studio) для редакторов и администраторов.
+- **Аутентификация**: безопасный вход и управление пользователями через NextAuth.
+- **Современный UI**: адаптивный и доступный интерфейс с использованием Radix UI, Tailwind и кастомных шрифтов.
+- **Markdown**: поддержка редактирования и предпросмотра markdown-контента.
+- **API-роуты**: расширяемые API для аутентификации и работы с данными.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Быстрый старт
 
-## Deploy on Vercel
+1. **Установите зависимости:**
+   ```bash
+   npm install
+   ```
+2. **Настройте переменные окружения:**
+   - AUTH_SECRET=
+   - AUTH_GITHUB_ID=
+   - AUTH_GITHUB_SECRET=
+   - NEXT_PUBLIC_SANITY_PROJECT_ID=
+   - NEXT_PUBLIC_SANITY_DATASET="production"
+   - NEXT_PUBLIC_SANITY_API_VERSION=
+   - SANITY_WRITE_TOKEN=
+3. **Запустите сервер разработки:**
+   ```bash
+   npm run dev
+   ```
+4. **Доступ к Sanity Studio:**
+   - [http://localhost:3000/studio](http://localhost:3000/studio)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Деплой
+
+Приложение задеплоено на Vercel:  
+👉 [posts-pu50ht1pt-thanatoscoils-projects.vercel.app](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)
+
+---

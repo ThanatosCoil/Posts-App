@@ -18,7 +18,7 @@ const Navbar = async () => {
         <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
             <>
-              <Link href="/startup/create">
+              <Link href="/article/create">
                 <span className="max-sm:hidden">Create</span>
                 <BadgePlus className="size-7 pb-1 sm:hidden" />
               </Link>
@@ -37,7 +37,7 @@ const Navbar = async () => {
               {/* По идее такой подход работать не должен из за того что кнопка
               это типичный пример client side компонента, но с такой настройкой
               он у меня и как серверный работает, но правильнее все же будет
-              использовать новый метод выше от команты некста, через форму, где
+              использовать новый метод выше от команды некста, через форму, где
               в action можно засунуть server side */}
               {/* <button
                 onClick={async () => {
