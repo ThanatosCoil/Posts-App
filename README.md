@@ -1,8 +1,8 @@
-# [YC Directory](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)
+# [Post App](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)
 
 ## Обзор
 
-**YC Directory** — веб-приложение для управления и публикации статей, авторов и плейлистов, построенное на базе Next.js и Sanity CMS.
+**Post App** — веб-приложение для управления и публикации статей, авторов и плейлистов, построенное на базе Next.js и Sanity CMS.
 
 ---
 

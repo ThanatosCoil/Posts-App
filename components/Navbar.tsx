@@ -12,8 +12,17 @@ const Navbar = async () => {
     <div className="px-5 py-3 bg-white shadow-sm font-work-sans">
       <nav className="flex justify-between items-center">
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={144} height={30} />
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={144}
+            height={30}
+            className="h-10 w-10 rounded-full"
+          />
         </Link>
+        <span className="font-bold text-2xl text-[#E60028] max-sm:hidden">
+          Post App
+        </span>
 
         <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
