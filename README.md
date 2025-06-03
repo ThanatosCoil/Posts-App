@@ -1,4 +1,4 @@
-# [Post App](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)
+# [YC Directory](https://posts-one-nu.vercel.app)[![Открыть проект](https://img.shields.io/badge/View%20Live-Online-brightgreen?style=for-the-badge&logo=vercel)](https://posts-one-nu.vercel.app/)
 
 ## Обзор
 
@@ -26,7 +26,7 @@
 - **Управление статьями**: создание и просмотр статей.
 - **Управление авторами**: управление авторами.
 - **Плейлисты**: создание плейлистов из статей.
-- **Sanity Studio**: полноценная CMS по адресу [`/studio`](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app/studio) для редакторов и администраторов.
+- **Sanity Studio**: полноценная CMS по адресу [`/studio`](https://posts-one-nu.vercel.app/studio) для редакторов и администраторов.
 - **Аутентификация**: безопасный вход и управление пользователями через NextAuth.
 - **Современный UI**: адаптивный и доступный интерфейс с использованием Radix UI, Tailwind и кастомных шрифтов.
 - **Markdown**: поддержка редактирования и предпросмотра markdown-контента.
@@ -60,6 +60,6 @@
 ## Деплой
 
 Приложение задеплоено на Vercel:  
-👉 [posts-pu50ht1pt-thanatoscoils-projects.vercel.app](https://posts-pu50ht1pt-thanatoscoils-projects.vercel.app)
+👉 [https://posts-one-nu.vercel.app](https://posts-one-nu.vercel.app)
 
 ---
