@@ -1,4 +1,4 @@
-# [YC Directory](https://posts-one-nu.vercel.app)[![Открыть проект](https://img.shields.io/badge/View%20Live-Online-brightgreen?style=for-the-badge&logo=vercel)](https://posts-one-nu.vercel.app/)
+# [Post App](https://posts-one-nu.vercel.app)[![Открыть проект](https://img.shields.io/badge/View%20Live-Online-brightgreen?style=for-the-badge&logo=vercel)](https://posts-one-nu.vercel.app/)
 
 ## Обзор
 
